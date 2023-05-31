@@ -16,7 +16,6 @@
             </tr>
           </thead>
           <tbody>
-            <%= "Enhanced_cart is currently: #{enhanced_cart}" %>
       <% enhanced_cart.each do |item| %>
         <%= render 'item', product: item[:product], quantity: item[:quantity].to_i %>
       <% end %>
@@ -50,6 +49,12 @@
         <% end %>
         </div>
         </div>
+
+      <%else%>
+      <div class="alert alert-warning" role="alert">
+        <strong>Your cart is currently empty.<br></strong>
+        Head back to <em><%= link_to 'The Jungle', root_path %></em> to pick some plants!
+      </div>
         
       <% end %>
     </section>
