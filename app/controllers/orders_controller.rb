@@ -2,6 +2,12 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+    
+    # Load line_items based on @order that is stored (If all is setup properly Ruby knows how to join the tables to get this data)
+    @line_items = @order.line_items
+
+    @ordered_products = @line_items.map { |line_item| line_item.product }
+
   end
 
   def create
