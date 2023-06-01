@@ -44,6 +44,9 @@ gem 'rmagick'
 gem 'faker'
 gem 'carrierwave'
 
+# Load environment variables from .env
+gem 'dotenv'
+
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
