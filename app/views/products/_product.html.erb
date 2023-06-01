@@ -3,7 +3,6 @@
     <%= image_tag product.image.thumb.url , alt: product.name %>
     <h1>
       <span><%= product.name %></span>
-      <!-- <span><%= "Currently the stock is #{product.quantity}"%></span> ##COMMENT HERE!!-->
       <span><%= humanized_money_with_symbol product.price %></span>
     </h1>
   <% end%>
