@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+
+  has_secure_password
+
   def new
   end
 
@@ -17,5 +20,5 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
-  
+
 end
