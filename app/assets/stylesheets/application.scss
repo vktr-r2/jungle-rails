@@ -91,6 +91,8 @@ form.button_to {
 }
 
 .sticky-nav {
+  display: flex;
+  align-items: center;
   background: green;
   position: sticky;
   top: 0;
@@ -103,6 +105,18 @@ form.button_to {
     text-transform: uppercase;
     font-style: italic;
   }
+  
+}
+
+.navbar-link-brand-style {
+  font-weight: 900;
+  font-family: "Montserrat";
+  text-transform: uppercase;
+  font-style: italic;
+  margin-left: 1rem;
+  color: white;
+  text-decoration: none;
+  margin-top: 25px;
 }
 
 .page-header {
