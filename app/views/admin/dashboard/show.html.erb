@@ -4,5 +4,5 @@
 
 <div class="alert alert-success" role="alert">
   <p>There are <%= link_to "#{@product_count} products", admin_products_path %></p>
-  <p>There are <%= @category_count %> categories.</p>
+  <p>There are <%= link_to "#{@category_count} categories", admin_categories_path %></p>
 </div>
