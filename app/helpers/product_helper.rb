@@ -5,7 +5,7 @@ module ProductHelper
 
   def display_sold_out(product)
     if sold_out?(product)
-      content_tag(:span, "Sold Out", class: "badge bg-danger")
+      content_tag(:span, "Sold Out", class: "badge soldout")
     end
   end
 end
