@@ -73,6 +73,17 @@ RSpec.describe User, type: :model do
       user.valid?
       expect(user.errors.full_messages).to include("Email has already been taken")
     end
+
+    it 'is invalid with a password shorter than 8 characters' do
+      user = User.new(
+        name: 'Test User',
+        email: 'test@example.com',
+        password: 'short',
+        password_confirmation: 'short'
+      )
+      user.valid?
+      expect(user.errors.full_messages).to include("Password is too short (minimum is 8 characters)")
+    end
   
   end
 end
