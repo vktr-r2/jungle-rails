@@ -9,7 +9,14 @@ class UsersController < ApplicationController
       session[:user_id] = user.id
       redirect_to '/'
     else
-      redirect_to '/signup'
+      if user.errors.details[:email]&.any? && user.errors.details[:email][0][:error] == :taken
+        flash[:alert] = "Email has already been taken"
+      elsif user.errors.details[:password_confirmation]&.any?
+        flash[:alert] = "Password confirmation doesn't match Password"
+      else
+        flash[:alert] = "Something went wrong. Please try again."
+      end
+      render 'new'
     end
   end
 

@@ -36,4 +36,13 @@
     </div>
   </div>
 
+  <!-- HANDLE ALERT IF SIGN UP FAILS -->
+  <% if flash[:alert] %>
+  <div class="alert alert-danger">
+    <%= flash[:alert] %>
+  </div>
+
+<% end %>
+
+
 </section>
