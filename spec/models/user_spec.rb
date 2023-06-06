@@ -56,6 +56,23 @@ RSpec.describe User, type: :model do
       user.valid?
       expect(user.errors.full_messages).to include("Password confirmation doesn't match Password")
     end
+
+    it 'is invalid with a duplicate email address' do
+      User.create(
+        name: 'Test User1',
+        email: 'test@example.com',
+        password: 'testpassword',
+        password_confirmation: 'testpassword'
+      )
+      user = User.new(
+        name: 'Test User2',
+        email: 'TEST@example.com',
+        password: 'testpassword',
+        password_confirmation: 'testpassword'
+      )
+      user.valid?
+      expect(user.errors.full_messages).to include("Email has already been taken")
+    end
   
   end
 end
