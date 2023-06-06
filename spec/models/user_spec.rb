@@ -86,4 +86,32 @@ RSpec.describe User, type: :model do
     end
   
   end
+
+
+  describe '.authenticate_with_credentials' do
+    before do
+      @user = User.create(name: 'Test User', email: 'test@test.com', password: 'password123', password_confirmation: 'password123')
+    end
+
+    it 'should pass with correct credentials' do
+      expect(User.authenticate_with_credentials('test@test.com', 'password123')).to eq(@user)
+    end
+
+    it 'should fail with incorrect password' do
+      expect(User.authenticate_with_credentials('test@test.com', 'wrongpassword')).to be_nil
+    end
+
+    it 'should fail with incorrect email' do
+      expect(User.authenticate_with_credentials('wrongemail@test.com', 'password123')).to be_nil
+    end
+
+    it 'should pass with correct credentials and leading/trailing spaces' do
+      expect(User.authenticate_with_credentials(' test@test.com ', 'password123')).to eq(@user)
+    end
+
+    it 'should pass with correct credentials and mixed case email' do
+      expect(User.authenticate_with_credentials('TEST@TEST.com', 'password123')).to eq(@user)
+    end
+  end
+
 end
