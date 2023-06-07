@@ -4,11 +4,11 @@ describe('Jungle App', () => {
 
   it('Navigate to home page',()=>{
     cy.visit("/");
-    cy.get(".products").should('exist'); // ensure that the products container exists
+    cy.get(".products").should('exist'); 
   })
 
   it("There is products on the page", () => {
-    cy.get(".products").should('exist'); // ensure that the products container exists
+    cy.get(".products").should('exist'); 
     cy.get(".products article").should("be.visible");
   });
 
