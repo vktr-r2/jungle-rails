@@ -1,6 +1,11 @@
 # Jungle
 
-A mini e-commerce application built with Rails 6.1 for purposes of teaching Rails by example.
+The Jungle project was made during the Ruby on Rails portion of the Lighthouse Labs bootcamp course. Jungle is designed to be a multi-paged mini e-commerce app that allows users create and sign into accounts,  scroll through an index of products, add them to their shopping cart, and checkout with the integrated Stripe payment processor API.
+
+Admins can also log in to add/edit/remove products from the products list, and add product categories to be displayed on the nav bar.
+
+The project was primarily focused on introducing us to a real world workplace scenario where as a developer you may be asked to work on an app that is written in an unfamiliar language.  Was able to gain experience working with the Ruby on Rails framework, and the Model-View-Controller architectural pattern.  Secondary focus was implementing features using a behaviour-driven development approach.  Tests were written for Rspec and Cypress
+
 
 ## Setup
 
@@ -29,3 +34,5 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 - Bootstrap 5
 - PostgreSQL 9.x
 - Stripe
+- Rspec
+- Cypress
